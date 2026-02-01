@@ -62,6 +62,12 @@ def home():
         "Sumali ako sa GA PH last month. Akala ko ako lang, pero marami pala kaming ganito. Salamat sa mga nag-share"    &nbsp;&nbsp;&nbsp;&nbsp;
 
     </div>
+        <!-- YouTube Video in the empty space -->
+    <div style="margin: 60px auto; max-width: 800px; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <h2 style="color: #228B22; font-size: 40px; margin-bottom: 20px;">Pagharap sa Kamatayan</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ANJ9qxx_INY?si=wsK-lB8zSxRoU4ig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p style="font-size: 28px; margin-top: 20px;">(Video mula sa YouTube - safe at helpful para sa recovery journey mo)</p>
+    </div>
 </div>
 
 <style>
