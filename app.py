@@ -37,6 +37,28 @@ def home():
         <a href="/self-check" class="big-btn">Self-Check (20 Tanong)</a>
         <a href="/paano-tumigil" class="big-btn">Paano Tumigil</a>
         <a href="/mga-kwento" class="big-btn">Mga Kwento ng Iba</a>
+
+        <!-- Scrolling Ticker -->
+<div style="background: #FFD700; color: #228B22; overflow: hidden; white-space: nowrap; padding: 15px 0; font-size: 32px; font-weight: bold; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+    <div style="display: inline-block; animation: ticker 80s linear infinite;">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        "One day at a time lang, bro... 6 months clean na ako, wag magmayabang, lowkey lang..." &nbsp;&nbsp;&nbsp;&nbsp;
+        "Nagsimula sa sabong, umabot sa utang sa lending apps... pero tumigil ako, kaya mo rin..." &nbsp;&nbsp;&nbsp;&nbsp;
+        "Hindi ko sinabi sa asawa ko noon... pero nung umamin ako, naging suporta siya..." &nbsp;&nbsp;&nbsp;&nbsp;
+        "Relapse happened 3 times... pero tumayo ulit ako. Isa-isang araw lang talaga..." &nbsp;&nbsp;&nbsp;&nbsp;
+        "Join GA PH, libre at walang judgment... changed my life..." &nbsp;&nbsp;&nbsp;&nbsp;
+        "From negative balance to feeding my family again... salamat sa support..." &nbsp;&nbsp;&nbsp;&nbsp;
+        "Wag mahiya humingi ng tulong... hotline 1553, 24/7..." &nbsp;&nbsp;&nbsp;&nbsp;
+        "Kung nahihirapan ka ngayon, alam ko 'yung pakiramdam... pero may pag-asa..." &nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</div>
+
+<style>
+    @keyframes ticker {
+        0% { transform: translateX(25%); }
+        100% { transform: translateX(-100%); }
+    }
+</style>
                 
         
     </body>
