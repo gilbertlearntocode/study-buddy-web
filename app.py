@@ -40,22 +40,33 @@ def home():
 
         <!-- Scrolling Ticker -->
 <div style="background: #FFD700; color: #228B22; overflow: hidden; white-space: nowrap; padding: 15px 0; font-size: 32px; font-weight: bold; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-    <div style="display: inline-block; animation: ticker 80s linear infinite;">
+    <div style="display: inline-block; animation: ticker 200s linear infinite;">
         &nbsp;&nbsp;&nbsp;&nbsp;
         "One day at a time lang, bro... 6 months clean na ako, wag magmayabang, lowkey lang..." &nbsp;&nbsp;&nbsp;&nbsp;
-        "Nagsimula sa sabong, umabot sa utang sa lending apps... pero tumigil ako, kaya mo rin..." &nbsp;&nbsp;&nbsp;&nbsp;
+        "Nagsimula sa sabong, umabot sa utang sa lending apps... pero tumigil ako, kaya mo rin..." &nbsp;&nbsp;&nbsp;&nbsp;         
         "Hindi ko sinabi sa asawa ko noon... pero nung umamin ako, naging suporta siya..." &nbsp;&nbsp;&nbsp;&nbsp;
         "Relapse happened 3 times... pero tumayo ulit ako. Isa-isang araw lang talaga..." &nbsp;&nbsp;&nbsp;&nbsp;
         "Join GA PH, libre at walang judgment... changed my life..." &nbsp;&nbsp;&nbsp;&nbsp;
         "From negative balance to feeding my family again... salamat sa support..." &nbsp;&nbsp;&nbsp;&nbsp;
         "Wag mahiya humingi ng tulong... hotline 1553, 24/7..." &nbsp;&nbsp;&nbsp;&nbsp;
         "Kung nahihirapan ka ngayon, alam ko 'yung pakiramdam... pero may pag-asa..." &nbsp;&nbsp;&nbsp;&nbsp;
+        "2 years clean na pero pag may load sa gcash parang may demonyo na nagsasabi 'one spin lang' grabe talaga...." &nbsp;&nbsp;&nbsp;&nbsp;
+        "Nanalo ako 50k isang gabi sa bingo plus kinabukasan ubos na naman + utang pa sa lending 3 apps" &nbsp;&nbsp;&nbsp;&nbsp;
+        "Wife ko nalaman na 200k utang ko sa online casino sabi niya 'bakit di mo sinabi?' kasi nahihiya ako sobra"    &nbsp;&nbsp;&nbsp;&nbsp;
+        "From 1k bet naging 10k per game hanggang sa pawn ng motor para makapaglaro ulit tanga talaga ako nun"    &nbsp;&nbsp;&nbsp;&nbsp;
+        "Every payday diretso sa sabong app. Mga anak ko baon wala na. Ngayon 3 months clean pero takot pa rin ako"    &nbsp;&nbsp;&nbsp;&nbsp;
+        "Relapse ako last week after 8 months. Isang text lang ng tropa 'game tayo' tapos ubos 15k"    &nbsp;&nbsp;&nbsp;&nbsp;
+        "Nagtatago ako sa CR para maglaro kasi nahihiya sa pamilya. Feeling ko demonyo na 'ko"    &nbsp;&nbsp;&nbsp;&nbsp;
+        "Utang ko sa 5-6 umabot 80k dahil sa color game. bininta ko na cellphone ko para mabayaran"    &nbsp;&nbsp;&nbsp;&nbsp;
+        "One day clean pa lang ako pero grabe yung panghihinayang sa pera na nasayang. Kaya ko pa ba 'to?"    &nbsp;&nbsp;&nbsp;&nbsp;
+        "Sumali ako sa GA PH last month. Akala ko ako lang, pero marami pala kaming ganito. Salamat sa mga nag-share"    &nbsp;&nbsp;&nbsp;&nbsp;
+
     </div>
 </div>
 
 <style>
     @keyframes ticker {
-        0% { transform: translateX(25%); }
+        0% { transform: translateX(0%); }
         100% { transform: translateX(-100%); }
     }
 </style>
