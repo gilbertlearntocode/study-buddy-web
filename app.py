@@ -31,7 +31,7 @@ def home():
         </style>
     </head>
     <body>
-        <h1>Self help and Story PH</h1>
+        <h1>You are not alone</h1>
         <p>Kung adik ka sa online gambling, hindi ka nag-iisa. May paraan para tumigil at magsimula ulit.</p>
 
         <a href="/self-check" class="big-btn">Self-Check (20 Tanong)</a>
@@ -166,7 +166,7 @@ def paano_tumigil():
         <p class="hotline">Tumawag o mag-text sa mga ito (libre at confidential):</p>
         <ul>
             <li><strong>DOH Mental Health Hotline</strong>: 1553 (nationwide, 24/7)</li>
-            <li><strong>PAGCOR Helpline</strong>: 0917-878-8357 o email helpdesk@pagcor.ph</li>
+            <li><strong>PAGCOR Helpline</strong>:  0915 938 2808 o email ResponsibleGaming@pagcor.ph</li>
             <li><strong>HopeLine PH</strong>: 0917-558-4673 (text/call, 24/7)</li>
             <li><strong>In Touch Community Services</strong>: 0917-800-1123 (counseling)</li>
         </ul>
