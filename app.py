@@ -1,19 +1,38 @@
 from flask import Flask
 
+import random
+
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return """
+    # List of short, hopeful daily prayers/quotes (you can add/edit more anytime)
+    prayers = [
+        "Diyos, bigyan Mo ako ng kapayapaan upang tanggapin ang mga hindi ko mababago, lakas para baguhin ang maaari, at karunungan para malaman ang pagkakaiba. One day at a time lang.",
+        "Serenity Prayer: Grant me the serenity to accept the things I cannot change... Kaya mo 'yan, isa-isang araw lang.",
+        "Lord, tulungan Mo ako na huwag magbalik sa sugal ngayong araw. Bigyan Mo ako ng lakas at kapayapaan.",
+        "One day clean. That's all I need today. Lowkey lang, bro.",
+        "Hindi ako nag-iisa. May Diyos, may pamilya, may mga taong sumusuporta kahit hindi ko pa sinasabi.",
+        "Salamat sa bagong araw na walang sugal. Salamat sa pagkakataong magsimula ulit.",
+        "God, help me stay strong today. Remove the urge, fill my heart with peace.",
+        "Isang hakbang lang. Hindi kailangan maging perfect — kailangan lang tumuloy.",
+        "Lord, bigyan Mo ako ng lakas na harapin ang araw na 'to nang walang sugal. Isa-isang oras lang.",
+        "Kahit mahirap, patuloy lang. Bawat araw na clean ay panalo na. Kaya mo 'yan, bro."
+    ]
+
+    # Pick one randomly every time the page loads
+    daily_prayer = random.choice(prayers)
+
+    return f"""
     <!DOCTYPE html>
     <html>
     <head>
         <title>Tulong sa Sugal - Stop Gambling PH</title>
         <style>
-            body { background: linear-gradient(to bottom, #F0F8FF, #E0FFFF); text-align: center; font-family: Arial; padding: 30px; }
-            h1 { color: #228B22; font-size: 60px; margin: 40px 0; }
-            p { font-size: 35px; color: #333; margin: 30px 0; }
-            .big-btn { 
+            body {{ background: linear-gradient(to bottom, #F0F8FF, #E0FFFF); text-align: center; font-family: Arial; padding: 30px; }}
+            h1 {{ color: #228B22; font-size: 60px; margin: 40px 0; }}
+            p {{ font-size: 35px; color: #333; margin: 30px 0; }}
+            .big-btn {{ 
                 display: inline-block; 
                 font-size: 40px; 
                 padding: 30px 60px; 
@@ -26,11 +45,55 @@ def home():
                 margin: 30px 0; 
                 width: 80%; 
                 max-width: 500px; 
-            }
-            .big-btn:hover { background: #228B22; }
+            }}
+            .big-btn:hover {{ background: #228B22; }}
+            .prayer-box {{
+                background: #FFFACD; 
+                border-radius: 20px; 
+                padding: 30px; 
+                margin: 20px auto; 
+                max-width: 800px; 
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+                font-size: 32px; 
+                font-style: italic; 
+                color: #006400;
+            }}
+            .ticker-container {{
+                background: #FFD700; 
+                color: #228B22; 
+                overflow: hidden; 
+                white-space: nowrap; 
+                padding: 15px 0; 
+                font-size: 32px; 
+                font-weight: bold; 
+                margin: 20px 0; 
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+            }}
+            .ticker {{
+                display: inline-block; 
+                animation: ticker 125s linear infinite;
+            }}
+            @keyframes ticker {{
+                0% {{ transform: translateX(5%); }}
+                100% {{ transform: translateX(-100%); }}
+            }}
+            .video-box {{
+                margin: 60px auto; 
+                max-width: 800px; 
+                padding: 20px; 
+                background: white; 
+                border-radius: 20px; 
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            }}
         </style>
     </head>
     <body>
+        <!-- Daily Prayer at the very top -->
+        <div class="prayer-box">
+            <p>"{daily_prayer}"</p>
+            <p style="font-size:28px; margin-top:20px;">— One day at a time, bro. Kaya mo 'yan.</p>
+        </div>
+
         <h1>You are not alone</h1>
         <p>Kung adik ka sa online gambling, hindi ka nag-iisa. May paraan para tumigil at magsimula ulit.</p>
 
@@ -39,45 +102,37 @@ def home():
         <a href="/mga-kwento" class="big-btn">Mga Kwento ng Iba</a>
 
         <!-- Scrolling Ticker -->
-<div style="background: #FFD700; color: #228B22; overflow: hidden; white-space: nowrap; padding: 15px 0; font-size: 32px; font-weight: bold; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-    <div style="display: inline-block; animation: ticker 200s linear infinite;">
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        "One day at a time lang, bro... 6 months clean na ako, wag magmayabang, lowkey lang..." &nbsp;&nbsp;&nbsp;&nbsp;
-        "Nagsimula sa sabong, umabot sa utang sa lending apps... pero tumigil ako, kaya mo rin..." &nbsp;&nbsp;&nbsp;&nbsp;         
-        "Hindi ko sinabi sa asawa ko noon... pero nung umamin ako, naging suporta siya..." &nbsp;&nbsp;&nbsp;&nbsp;
-        "Relapse happened 3 times... pero tumayo ulit ako. Isa-isang araw lang talaga..." &nbsp;&nbsp;&nbsp;&nbsp;
-        "Join GA PH, libre at walang judgment... changed my life..." &nbsp;&nbsp;&nbsp;&nbsp;
-        "From negative balance to feeding my family again... salamat sa support..." &nbsp;&nbsp;&nbsp;&nbsp;
-        "Wag mahiya humingi ng tulong... hotline 1553, 24/7..." &nbsp;&nbsp;&nbsp;&nbsp;
-        "Kung nahihirapan ka ngayon, alam ko 'yung pakiramdam... pero may pag-asa..." &nbsp;&nbsp;&nbsp;&nbsp;
-        "2 years clean na pero pag may load sa gcash parang may demonyo na nagsasabi 'one spin lang' grabe talaga...." &nbsp;&nbsp;&nbsp;&nbsp;
-        "Nanalo ako 50k isang gabi sa bingo plus kinabukasan ubos na naman + utang pa sa lending 3 apps" &nbsp;&nbsp;&nbsp;&nbsp;
-        "Wife ko nalaman na 200k utang ko sa online casino sabi niya 'bakit di mo sinabi?' kasi nahihiya ako sobra"    &nbsp;&nbsp;&nbsp;&nbsp;
-        "From 1k bet naging 10k per game hanggang sa pawn ng motor para makapaglaro ulit tanga talaga ako nun"    &nbsp;&nbsp;&nbsp;&nbsp;
-        "Every payday diretso sa sabong app. Mga anak ko baon wala na. Ngayon 3 months clean pero takot pa rin ako"    &nbsp;&nbsp;&nbsp;&nbsp;
-        "Relapse ako last week after 8 months. Isang text lang ng tropa 'game tayo' tapos ubos 15k"    &nbsp;&nbsp;&nbsp;&nbsp;
-        "Nagtatago ako sa CR para maglaro kasi nahihiya sa pamilya. Feeling ko demonyo na 'ko"    &nbsp;&nbsp;&nbsp;&nbsp;
-        "Utang ko sa 5-6 umabot 80k dahil sa color game. bininta ko na cellphone ko para mabayaran"    &nbsp;&nbsp;&nbsp;&nbsp;
-        "One day clean pa lang ako pero grabe yung panghihinayang sa pera na nasayang. Kaya ko pa ba 'to?"    &nbsp;&nbsp;&nbsp;&nbsp;
-        "Sumali ako sa GA PH last month. Akala ko ako lang, pero marami pala kaming ganito. Salamat sa mga nag-share"    &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="ticker-container">
+            <div class="ticker">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                "One day at a time lang, bro... 6 months clean na ako, wag magmayabang, lowkey lang..." &nbsp;&nbsp;&nbsp;&nbsp;
+                "Nagsimula sa sabong, umabot sa utang sa lending apps... pero tumigil ako, kaya mo rin..." &nbsp;&nbsp;&nbsp;&nbsp;         
+                "Hindi ko sinabi sa asawa ko noon... pero nung umamin ako, naging suporta siya..." &nbsp;&nbsp;&nbsp;&nbsp;
+                "Relapse happened 3 times... pero tumayo ulit ako. Isa-isang araw lang talaga..." &nbsp;&nbsp;&nbsp;&nbsp;
+                "Join GA PH, libre at walang judgment... changed my life..." &nbsp;&nbsp;&nbsp;&nbsp;
+                "From negative balance to feeding my family again... salamat sa support..." &nbsp;&nbsp;&nbsp;&nbsp;
+                "Wag mahiya humingi ng tulong... hotline 1553, 24/7..." &nbsp;&nbsp;&nbsp;&nbsp;
+                "Kung nahihirapan ka ngayon, alam ko 'yung pakiramdam... pero may pag-asa..." &nbsp;&nbsp;&nbsp;&nbsp;
+                "2 years clean na pero pag may load sa gcash parang may demonyo na nagsasabi 'one spin lang' grabe talaga...." &nbsp;&nbsp;&nbsp;&nbsp;
+                "Nanalo ako 50k isang gabi sa bingo plus kinabukasan ubos na naman + utang pa sa lending 3 apps" &nbsp;&nbsp;&nbsp;&nbsp;
+                "Wife ko nalaman na 200k utang ko sa online casino sabi niya 'bakit di mo sinabi?' kasi nahihiya ako sobra" &nbsp;&nbsp;&nbsp;&nbsp;
+                "From 1k bet naging 10k per game hanggang sa pawn ng motor para makapaglaro ulit tanga talaga ako nun" &nbsp;&nbsp;&nbsp;&nbsp;
+                "Every payday diretso sa sabong app. Mga anak ko baon wala na. Ngayon 3 months clean pero takot pa rin ako" &nbsp;&nbsp;&nbsp;&nbsp;
+                "Relapse ako last week after 8 months. Isang text lang ng tropa 'game tayo' tapos ubos 15k" &nbsp;&nbsp;&nbsp;&nbsp;
+                "Nagtatago ako sa CR para maglaro kasi nahihiya sa pamilya. Feeling ko demonyo na 'ko" &nbsp;&nbsp;&nbsp;&nbsp;
+                "Utang ko sa 5-6 umabot 80k dahil sa color game. Pinagbili ko na cellphone ko para mabayaran" &nbsp;&nbsp;&nbsp;&nbsp;
+                "One day clean pa lang ako pero grabe yung panghihinayang sa pera na nasayang. Kaya ko pa ba 'to?" &nbsp;&nbsp;&nbsp;&nbsp;
+                "Sumali ako sa GA PH last month. Akala ko ako lang, pero marami pala kaming ganito. Salamat sa mga nag-share" &nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
 
-    </div>
         <!-- YouTube Video in the empty space -->
-    <div style="margin: 60px auto; max-width: 800px; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-        <h2 style="color: #228B22; font-size: 40px; margin-bottom: 20px;">Pagharap sa Kamatayan</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ANJ9qxx_INY?si=wsK-lB8zSxRoU4ig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p style="font-size: 28px; margin-top: 20px;">(Video mula sa YouTube - Off the Record)</p>
-    </div>
-</div>
+        <div class="video-box">
+            <h2 style="color: #228B22; font-size: 40px; margin-bottom: 20px;">Pagharap sa Kamatayan</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ANJ9qxx_INY?si=Fi_NVxgAUwGsyuvm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p style="font-size: 28px; margin-top: 20px;">(Video mula sa YouTube - Off the Record)</p>
+        </div>
 
-<style>
-    @keyframes ticker {
-        0% { transform: translateX(0%); }
-        100% { transform: translateX(-100%); }
-    }
-</style>
-                
-        
     </body>
     </html>
     """
